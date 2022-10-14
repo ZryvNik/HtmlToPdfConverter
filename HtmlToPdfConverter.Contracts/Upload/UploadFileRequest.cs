@@ -7,6 +7,5 @@ namespace HtmlToPdfConverter.Contracts.Upload
     public class UploadFileRequest : IRequest<UploadFileResult>
     {
         public Stream FileStream { get; set; }
-        public Guid CorrelationId { get; set; }
     }
 }

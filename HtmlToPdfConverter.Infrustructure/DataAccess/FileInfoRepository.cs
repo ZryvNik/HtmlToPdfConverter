@@ -3,6 +3,7 @@ using HtmlToPdfConverter.Infrustructure.ApplicationId;
 using HtmlToPdfConverter.Infrustructure.DataAccess.Exceptions;
 using HtmlToPdfConverter.Infrustructure.DataAccess.Models;
 using LiteDB;
+using static MassTransit.ValidationResultExtensions;
 
 namespace HtmlToPdfConverter.Infrustructure.DataAccess
 {
@@ -26,6 +27,17 @@ namespace HtmlToPdfConverter.Infrustructure.DataAccess
                 .Find(x => x.Status == FileProcessStatus.Added 
                   || (x.Status == FileProcessStatus.InProgress && x.ProceedByApplicationId != _applicationIdProvider.ApplicationId))
                 .FirstOrDefault();
+        }
+
+        public FileInfo? GetFileInfoByCorrelationId(Guid correlationId)
+        {
+            var result = _database.GetCollection<FileInfo>()
+               .FindOne(x => x.CorrelationId == correlationId);
+
+            if (result == null)
+                throw new EntityNotFoundException($"Entity with correlationId = {correlationId} is not found");
+
+            return result;
         }
 
         public GetFileProcessStatusByCorrelationDto GetFileProcessStatusByCorrelation(Guid correlationId)

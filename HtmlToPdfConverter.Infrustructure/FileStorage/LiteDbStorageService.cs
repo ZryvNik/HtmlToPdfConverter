@@ -1,19 +1,22 @@
-﻿using LiteDB;
+﻿using HtmlToPdfConverter.CrossCutting.GuidProvider;
+using LiteDB;
 
 namespace HtmlToPdfConverter.Infrustructure.FileStorage
 {
     public class LiteDbStorageService : IFileStorageService
     {
         private readonly ILiteDatabase _database;
+        private readonly IGuidProvider _guidProvider;
 
-        public LiteDbStorageService(ILiteDatabase database)
+        public LiteDbStorageService(ILiteDatabase database, IGuidProvider guidProvider)
         {
             _database = database;
+            _guidProvider = guidProvider;
         }
 
         public string Upload(Stream fileStream)
         {
-            var id = Guid.NewGuid().ToString();
+            var id = _guidProvider.NewGuid.ToString();
             _database.FileStorage.Upload(id, id, fileStream);
 
             return id;
