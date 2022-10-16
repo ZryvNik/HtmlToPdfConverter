@@ -31,7 +31,7 @@ builder.Services.AddSingleton<IApplicationIdProvider, ApplicationIdProvider>();
 builder.Services.AddSingleton<IFileLifeTimeProvider>(
     new FileLifeTimeProvider()
     {
-        Minutes = builder.Configuration.GetSection("FileLifeTime:Munutes").Get<int>()
+        Minutes = builder.Configuration.GetSection("FileLifeTime:Munutes").Get<int?>() ?? 30
     });
 
 
