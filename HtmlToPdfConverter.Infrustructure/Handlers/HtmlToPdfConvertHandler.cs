@@ -28,16 +28,13 @@ namespace HtmlToPdfConverter.Infrustructure.Handlers
             //Достаём информацию о файлах по CorrelationId
             var fileInfo = _fileInfoRepository.GetFileInfoByCorrelationId(request.CorrelationId);
 
-            //Получаем stream html-файла и получаем из него строку
-            var htmlFileStream = _fileStorageService.Get(fileInfo!.HtmlFileStorageId);
-
+            //Достаём html
+            var htmlStream = _fileStorageService.Get(fileInfo!.HtmlFileStorageId);
             var html = string.Empty;
-            using (StreamReader sr = new(htmlFileStream))
-            {
-                html = await sr.ReadToEndAsync();
-            }
+            using(var reader = new StreamReader(htmlStream))
+                html = await reader.ReadToEndAsync();
 
-            //Конвертируем строку в pdf
+            //Конвертируем файл в pdf
             var pdfFileStream = await _htmlToPdfConvertionSevice.ConvertAsync(html, cancellationToken);
 
             //Сохраняем pdf-файл

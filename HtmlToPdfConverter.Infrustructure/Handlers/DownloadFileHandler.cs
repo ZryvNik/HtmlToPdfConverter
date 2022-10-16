@@ -15,7 +15,6 @@ namespace HtmlToPdfConverter.Infrustructure.Handlers
         public async Task<DownloadFileResult> Handle(DownloadFileRequest request, CancellationToken cancellationToken)
         {
             var result = _fileStorageService.Get(request.FileStorageId);
-            result.Position = 0;
 
             return await Task.FromResult(new DownloadFileResult()
             {

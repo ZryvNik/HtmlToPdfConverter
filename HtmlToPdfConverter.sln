@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter", "HtmlToPdfConverter\HtmlToPdfConverter.csproj", "{4BB1458A-8A1C-489F-8BF9-FE73FE2C132A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter.Contracts", "HtmlToPdfConverter.Contracts\HtmlToPdfConverter.Contracts.csproj", "{35083E88-A126-4A43-BCD8-55D95DE4926D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdfConverter.Contracts", "HtmlToPdfConverter.Contracts\HtmlToPdfConverter.Contracts.csproj", "{35083E88-A126-4A43-BCD8-55D95DE4926D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter.Infrustructure", "HtmlToPdfConverter.Infrustructure\HtmlToPdfConverter.Infrustructure.csproj", "{9067C181-410A-4B75-9AF4-BFC060683946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdfConverter.Infrustructure", "HtmlToPdfConverter.Infrustructure\HtmlToPdfConverter.Infrustructure.csproj", "{9067C181-410A-4B75-9AF4-BFC060683946}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter.CrossCutting", "HtmlToPdfConverter.CrossCutting\HtmlToPdfConverter.CrossCutting.csproj", "{052CFFD6-D151-4799-92B6-DD9BD9F116F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlToPdfConverter.CrossCutting", "HtmlToPdfConverter.CrossCutting\HtmlToPdfConverter.CrossCutting.csproj", "{052CFFD6-D151-4799-92B6-DD9BD9F116F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Schemas", "Schemas\Schemas.csproj", "{6C35F9C1-6ADB-4F18-9F7D-BCFF5093426C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Schemas", "Schemas\Schemas.csproj", "{6C35F9C1-6ADB-4F18-9F7D-BCFF5093426C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter.App", "HtmlToPdfConverter.App\HtmlToPdfConverter.App.csproj", "{1BB7C87B-D95B-4917-9CD0-89D4F334064D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4BB1458A-8A1C-489F-8BF9-FE73FE2C132A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4BB1458A-8A1C-489F-8BF9-FE73FE2C132A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4BB1458A-8A1C-489F-8BF9-FE73FE2C132A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4BB1458A-8A1C-489F-8BF9-FE73FE2C132A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35083E88-A126-4A43-BCD8-55D95DE4926D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35083E88-A126-4A43-BCD8-55D95DE4926D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35083E88-A126-4A43-BCD8-55D95DE4926D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{6C35F9C1-6ADB-4F18-9F7D-BCFF5093426C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C35F9C1-6ADB-4F18-9F7D-BCFF5093426C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C35F9C1-6ADB-4F18-9F7D-BCFF5093426C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB7C87B-D95B-4917-9CD0-89D4F334064D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB7C87B-D95B-4917-9CD0-89D4F334064D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB7C87B-D95B-4917-9CD0-89D4F334064D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB7C87B-D95B-4917-9CD0-89D4F334064D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

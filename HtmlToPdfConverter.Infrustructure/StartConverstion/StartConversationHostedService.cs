@@ -40,7 +40,7 @@ namespace HtmlToPdfConverter.Infrustructure.StartConverstion
                     _repository.Update(fileInfo);
                 }
 
-                await Task.Delay(1000);
+                await Task.Delay(1000, stoppingToken);
             }
         }
     }
