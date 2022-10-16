@@ -17,6 +17,7 @@ namespace HtmlToPdfConverter.Infrustructure.FileStorage
         public string Upload(Stream fileStream)
         {
             var id = _guidProvider.NewGuid.ToString();
+            fileStream.Position = 0;
             _database.FileStorage.Upload(id, id, fileStream);
 
             return id;

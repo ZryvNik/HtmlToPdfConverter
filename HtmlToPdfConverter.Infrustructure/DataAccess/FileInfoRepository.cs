@@ -3,7 +3,6 @@ using HtmlToPdfConverter.Infrustructure.ApplicationId;
 using HtmlToPdfConverter.Infrustructure.DataAccess.Exceptions;
 using HtmlToPdfConverter.Infrustructure.DataAccess.Models;
 using LiteDB;
-using static MassTransit.ValidationResultExtensions;
 
 namespace HtmlToPdfConverter.Infrustructure.DataAccess
 {
@@ -72,6 +71,20 @@ namespace HtmlToPdfConverter.Infrustructure.DataAccess
         public void Update(FileInfo fileInfo)
         {
             _database.GetCollection<FileInfo>().Update(fileInfo);
+        }
+
+        public IEnumerable<FileInfo> GetFileInfosOlderThen(DateTime date)
+        {
+            var result = _database
+                .GetCollection<FileInfo>()
+                .Find(x => x.Status == FileProcessStatus.Proceed
+                    && x.UploadDate < date);
+            return result ?? new List<FileInfo?>(); 
+        }
+
+        public void Delete(int id)
+        {
+            _database.GetCollection<FileInfo>().Delete(id);
         }
     }
 }

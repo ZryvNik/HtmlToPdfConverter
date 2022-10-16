@@ -1,0 +1,16 @@
+﻿global using HtmlToPdfConverter.Contracts.Download;
+global using HtmlToPdfConverter.Contracts.GetStatus;
+global using HtmlToPdfConverter.Contracts.Upload;
+global using HtmlToPdfConverter.CrossCutting.DateTimeProvider;
+global using HtmlToPdfConverter.CrossCutting.GuidProvider;
+global using HtmlToPdfConverter.Infrustructure.ApplicationId;
+global using HtmlToPdfConverter.Infrustructure.Convertion;
+global using HtmlToPdfConverter.Infrustructure.DataAccess;
+global using HtmlToPdfConverter.Infrustructure.FileStorage;
+global using HtmlToPdfConverter.Infrustructure.MassTransit;
+global using HtmlToPdfConverter.Infrustructure.MassTransit.Consumers;
+global using HtmlToPdfConverter.Infrustructure.StartConverstion;
+global using LiteDB;
+global using MassTransit;
+global using MediatR;
+global using System.Net.Mime;
